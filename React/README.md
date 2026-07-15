@@ -132,8 +132,106 @@ export default Header;
 
 ## Import Component
 ```js
+import Header from "./Header";
 
+function App() {
+	return <Header />;
+}
+export default App;
 ```
+
+## Multiple Components
+```js
+function Header() {
+	return <h1>Header</h1>;
+}
+
+function Footer() {
+	return <h1>Footer</h1>
+}
+
+function App() {
+	return(
+		<>
+			<Header />
+			<Footer />
+		</>
+	);
+}
+```
+
+## Props
+```js
+function User(Props) {
+	return <h1>{props.name}</h1>;
+}
+
+function App() {
+	return <User name="Anil" />;
+}
+export default App;
+```
+
+## Destructuring Props
+```js
+function User({ name }) {
+	return <h1>{name}</h1>;
+}
+
+function App() {
+	return <User name="Anil" />;
+}
+
+export default App;
+```
+
+## Multiple Props
+```js
+function User({ name, age }) {
+	return (
+		<h1>
+			{name} - {age}
+		</h1>
+	);
+}
+
+function App() {
+	return <User name="Anil" age="25" />;
+}
+export default App;
+```
+
+## Default Props
+```js
+function User({ name="Guest" }){
+	return <h1>{name}</h1>;
+}
+
+function App() {
+	return <User />;
+}
+export default App;
+```
+
+## Children Props
+```js
+function Card({ children }) {
+	return <div>{children}</div>
+}
+
+function App() {
+	return (
+		<Card>
+			<h1>Hello</h1>
+		</Card>
+	)
+}
+export default App;
+```
+
+# Level 3
+## useState
+
 
 
 
