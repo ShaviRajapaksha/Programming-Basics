@@ -24,7 +24,7 @@ react-app/
 ```
 
 ## main.jsx
-```js
+```jsx
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App frm "./App";
@@ -38,7 +38,7 @@ ReactDOM.createRoot(document.getElimentById("root")).render(
 ```
 
 ## App Component
-```js
+```jsx
 function App() {
 	return (
 		<h1>Hello React</h1>
@@ -49,7 +49,7 @@ export default App;
 ```
 
 ## JSX
-```js
+```jsx
 function App() {
 	return (
 		<div>
@@ -62,7 +62,7 @@ export default App;
 ```
 
 ## Variables
-```js
+```jsx
 function App () {
 	const name = "John";
 
@@ -74,7 +74,7 @@ export default App;
 ```
 
 ## JavaScript Expressions
-```js
+```jsx
 function App () {
 	const a = 10;
 	const b = 20;
@@ -87,7 +87,7 @@ export default App;
 ```
 
 ## Comments in JSX
-```js
+```jsx
 function App() {
 	return(
 		<>
@@ -101,7 +101,7 @@ export default App;
 ```
 
 ## Multiple Elements
-```js
+```jsx
 function App() {
 	return (
 		<>
@@ -114,7 +114,7 @@ export default App;
 ```
 
 ## Export Component
-```js
+```jsx
 function App() {
 	return <h1>React Component</h1>;
 }
@@ -123,7 +123,7 @@ export default App;
 
 # Level 2
 ## Create Component
-```js
+```jsx
 function Header() {
 	return <h1>Header</h1>;
 }
@@ -131,7 +131,7 @@ export default Header;
 ```
 
 ## Import Component
-```js
+```jsx
 import Header from "./Header";
 
 function App() {
@@ -141,7 +141,7 @@ export default App;
 ```
 
 ## Multiple Components
-```js
+```jsx
 function Header() {
 	return <h1>Header</h1>;
 }
@@ -161,7 +161,7 @@ function App() {
 ```
 
 ## Props
-```js
+```jsx
 function User(Props) {
 	return <h1>{props.name}</h1>;
 }
@@ -173,7 +173,7 @@ export default App;
 ```
 
 ## Destructuring Props
-```js
+```jsx
 function User({ name }) {
 	return <h1>{name}</h1>;
 }
@@ -186,7 +186,7 @@ export default App;
 ```
 
 ## Multiple Props
-```js
+```jsx
 function User({ name, age }) {
 	return (
 		<h1>
@@ -202,7 +202,7 @@ export default App;
 ```
 
 ## Default Props
-```js
+```jsx
 function User({ name="Guest" }){
 	return <h1>{name}</h1>;
 }
@@ -214,7 +214,7 @@ export default App;
 ```
 
 ## Children Props
-```js
+```jsx
 function Card({ children }) {
 	return <div>{children}</div>
 }
@@ -231,6 +231,304 @@ export default App;
 
 # Level 3
 ## useState
+```jsx
+import { useState } from "react";
+
+function App() {
+	const [count, setCount] = useState(0);
+
+	return <h1>{count}</h1>
+}
+export default App;
+```
+
+## Update State
+```jsx
+import { useState } from "react";
+
+function App() {
+	const [count, setCount] = useState(0);
+
+	return (
+		<button onClick={() => setCount(count+1)}>
+			{count}
+		</button>
+	);
+}
+export default App;
+```
+
+## Input State
+```jsx
+import { useState } from "react";
+
+function App() {
+	const[name, setName] = useState("");
+
+	return (
+		<>
+			<input
+				value={name}
+				onChange={(e) => setName(e.target.value)}
+			/>
+			<h2>{name}</h2>
+		</>
+	);
+}
+export defalt App;
+```
+
+## Boolean State
+```jsx
+import { useState } from "react";
+
+function App() {
+	const [show, setShow] = useState(true);
+
+	return (
+		<button onClick = {() => setShow(!show)}>
+			Toggle
+		</button>
+	);
+}
+```
+
+## Conditional Rendering
+```jsx
+import { useState } from
+
+function App() {
+	const [show, setShow] = useState(true);
+
+	return (
+		<>
+			<button onClick ={() => setShow(!show)}>
+				Toggle
+			</button>
+			{show && <h1>Hello React</h1>}
+		</>
+	);
+}
+export default App;
+```
+
+## State Object
+```jsx
+import { useState } from "react";
+
+function App() {
+	const [user, setUser] = useState({
+		name: "John";
+		age: 25;
+	});
+
+	return <h1>{user.name}</h1>
+}
+export default App;
+```
+
+## Update Object State
+```jsx
+import { useState } from "react";
+
+function App() {
+	const [user, setUser] = useState({
+		name: "john",
+		age: 25,
+	});
+
+	return (
+		<button
+			onClick = {() => 
+				setUser({
+					...user,
+					age:26,
+				})
+			}
+		>
+			{user.age}
+		</button>
+	);
+}
+export default App;
+```
+
+## State Array
+```jsx
+import { useState } from "react";
+
+function App() {
+	const [colors] = useState([
+		"Red",
+		"Blue",
+		"Green",
+	]);
+
+	return <h1>{colors[0]}</h1>;
+} 
+export default App;
+```
+
+# Level 4
+## Rendering List
+
+```jsx
+function App() {
+	const fruits = ["Apple", "Banana", "Orange"];
+
+	return (
+		<>
+			{fruits.map((fruit) => (
+				<h2>{fruit}</h2>
+			))}
+		</>
+	);
+}
+export default App;
+```
+
+## Key Prop
+```jsx
+function App() {
+	const fruits = ["Apple", "Banana", "Orange"];
+
+	return (
+		<>
+			{fruits.map((fruit, index) => (
+				<h2 key={index}>{fruit}</h2>
+			))}
+		</>
+	);
+}
+export default App;
+```
+
+## Render Objects
+
+```jsx
+function App() {
+	const users = [
+		{ id: 1, name: "John"},
+		{ id: 2, name: "Shane"},
+	];
+
+	return (
+		<>
+			{users.map((user) => (
+				<h2 key={user.id}>{user.name}</h2>
+			))}
+		</>
+	);
+}
+export default App;
+```
+
+## Event Handler
+```jsx
+function App() {
+	function handleClick() {
+		alert("Button CLicked");
+	}
+
+	return(
+		<button onClick={handleClick}>
+			Click
+		</button>
+	);
+}
+export default App;
+```
+
+## Arrow Function Event
+```jsx
+function App() {
+	return (
+		<button onClick={() => alert("Hello")}>
+			Click
+		</button>
+	)
+}
+export default App;
+```
+
+## Pass Arguments
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
