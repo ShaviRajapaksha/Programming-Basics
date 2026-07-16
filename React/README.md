@@ -452,13 +452,107 @@ export default App;
 ```
 
 ## Pass Arguments
+```jsx
+function App() {
+	function greet(name) {
+		alert(name);
+	}
+	return (
+		<button
+			onClick={() => greet("John")}
+		>
+			Click
+		</button>
+	)
+}
+export default App;
+```
 
+## Conditional Rendering
+```jsx
+function App() {
+	const loggedIn = true;
 
+	return (
+		<>
+			{loggedIn ? (
+				<h1>Welcome</h1>
+				) : (
+				<h1>Please Login</h1>
+				)
+			}
+		</>
+	);
+}
+export default App;
+```
 
+## Dynamic Class
+```jsx
+function App() {
+	const active = true;
 
+	return (
+		<h1 className={active ? "active" : ""}>
+			React
+		</h1>
+	)
+}
+export default App;
+```
 
+## Dynamic Style
+```jsx
+function App() {
+	const active = true;
 
+	return (
+		<h1
+			style={{
+				color: active ? : "green", "red",
+			}}
+		>
+			React
+		</h1>
+	);
+}
+export defaul App;
+```
 
+# Level 5
+## useEffect
+```jsx
+import { useEffect } from "react";
+
+function App() {
+	useEffect(() => {
+		console.log("Component Mounted");
+	}, []);
+
+	return <h1>React</h1>
+}
+export default App;
+```
+
+# useEffect with State
+```jsx
+import { useState, useEffect } from "react";
+
+function App() {
+	const [count, setCount] = useState(0);
+
+	useEffect(() => {
+		console.log(count);
+	}, [count]);
+
+	return (
+		<button onClick = {() => setCount(count+1)}>
+			{count}
+		</button>
+	);
+}
+export default App;
+```
 
 
 
