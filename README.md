@@ -20,10 +20,3 @@ Quickly jump to any category:
 | **☁️ DevOps & Tools** | Docker, CI/CD, VS Code Tips, Testing | [Explore Section](#-devops--tooling) |
 -->
 ---
-
-
-
-
-
-## 📜 License
-This repository is open-source under the [MIT License](LICENSE).
