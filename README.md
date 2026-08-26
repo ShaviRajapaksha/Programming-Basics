@@ -1,11 +1,11 @@
 
-# 🚀 Programming Basics & Developer Reference Guide
+# Programming Basics & Developer Reference Guide
 
 Welcome to the **Programming Basics** repository! This is a continuously updating collection of short notes, cheatsheets, core concepts, and code snippets covering essential tools, languages, frameworks, and stacks across modern software engineering.
 
 ---
 
-## 🗺️ Tech Stack Navigator
+## Tech Stack Navigator
 
 Quickly jump to any category:
 
